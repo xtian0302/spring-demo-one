@@ -6,7 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
+    
+	<context:property-placeholder location="classpath:sports.properties"/>
+	
 	<!-- Use logger config as first bean to init logging -->
 	<bean id="myLoggerConfig" class="com.xtian0302.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
@@ -27,8 +29,11 @@
     </bean>
     
     <bean id="bCoach" class="com.xtian0302.springdemo.BasketballCoach">
-    	<!-- Setup Constructor Injection -->
+    	<!-- Setup Setter Injection -->
     	<property name="fortuneService" ref="myFortune" />
+    	<!-- Set literal value-->
+    	<property name="emailAddress" value="${foo.email}" />
+    	<property name="team" value="${foo.team}" />
     </bean>
 </beans>
 

@@ -27,9 +27,13 @@ public class SetterDemoApp {
 		//call bean methods - essentially calling 3 instances of the same class
 		for (Coach coach : coaches) {
 			System.out.println(coach.getDailyWorkout());
-			System.out.println(coach.getDailyFortune());
+			System.out.println(coach.getDailyFortune()); 
 		}
 		
+		// Only basketball coach has methods for emailaddress/team get
+		// need to add to coach interface it we want this implemented for all coach classes
+		// wont work for bball / bball3 objects as they are casted as Coach class
+		System.out.println("\nEmail: "+bball2.getEmailAddress()+"\nTeam: "+bball2.getTeam());
 		//close context
 		context.close();
 	}
