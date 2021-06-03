@@ -11,10 +11,17 @@ public class HelloSpringApp {
 		//retrieve bean
 		Coach beanCoach = context.getBean("myCoach",Coach.class);
 		Coach tCoach = context.getBean("tCoach",Coach.class);
+		Coach bballCoach = context.getBean("bCoach",Coach.class);
 		//invoke methods from bean
 		System.out.println(beanCoach.getDailyWorkout());
+		System.out.println(beanCoach.getDailyFortune());
+		
 		System.out.println(tCoach.getDailyWorkout());
-		//close context
+		System.out.println(tCoach.getDailyFortune());
+
+		System.out.println(bballCoach.getDailyWorkout());
+		System.out.println(bballCoach.getDailyFortune());
+		//close context	
 		context.close();
 	}
 
