@@ -7,8 +7,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-	<context:property-placeholder location="classpath:sports.properties"/>
-	
 	<!-- Use logger config as first bean to init logging -->
 	<bean id="myLoggerConfig" class="com.xtian0302.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
@@ -16,25 +14,17 @@
     </bean>
     
     <!-- Define your beans here -->
-    <bean id="myFortune" class="com.xtian0302.springdemo.HappyFortuneService" >
+    <bean id="myFortune" class="com.xtian0302.springdemo.HappyFortuneService">
     </bean>
     
-    <bean id="myCoach" class="com.xtian0302.springdemo.BaseballCoach">
+    <bean id="tCoach" class="com.xtian0302.springdemo.TrackCoach"   
+    	  init-method="doStartup"
+    	  destroy-method="doCleanup"
+    >
     	<!-- Setup Constructor Injection -->
     	<constructor-arg ref="myFortune" />
     </bean>
-    <bean id="tCoach" class="com.xtian0302.springdemo.TrackCoach" scope="">
-    	<!-- Setup Constructor Injection -->
-    	<constructor-arg ref="myFortune" />
-    </bean>
     
-    <bean id="bCoach" class="com.xtian0302.springdemo.BasketballCoach">
-    	<!-- Setup Setter Injection -->
-    	<property name="fortuneService" ref="myFortune" />
-    	<!-- Set literal value-->
-    	<property name="emailAddress" value="${foo.email}" />
-    	<property name="team" value="${foo.team}" />
-    </bean>
 </beans>
 
 

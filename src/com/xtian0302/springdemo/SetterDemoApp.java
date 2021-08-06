@@ -19,6 +19,7 @@ public class SetterDemoApp {
 		Coach bball3 = context.getBean("bCoach",Coach.class);
 		//but not
 		//BasketballCoach bball3 = context.getBean("bCoach",Coach.class);
+		//Returns a reference to the bean as a singleton
 		List<Coach> coaches = new ArrayList<Coach>();
 		coaches.add(bball);
 		coaches.add(bball2);

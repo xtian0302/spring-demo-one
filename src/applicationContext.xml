@@ -23,7 +23,7 @@
     	<!-- Setup Constructor Injection -->
     	<constructor-arg ref="myFortune" />
     </bean>
-    <bean id="tCoach" class="com.xtian0302.springdemo.TrackCoach">
+    <bean id="tCoach" class="com.xtian0302.springdemo.TrackCoach" scope="">
     	<!-- Setup Constructor Injection -->
     	<constructor-arg ref="myFortune" />
     </bean>

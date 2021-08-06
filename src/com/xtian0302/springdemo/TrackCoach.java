@@ -21,5 +21,16 @@ public class TrackCoach implements Coach {
 		// TODO Auto-generated method stub
 		return "Track Coach says :"+fortuneService.getFortune();
 	}
+	
+	//init
+	public void doStartup() {
+		System.out.println("TrackCoach : inside startup method" );
+	}
+
+	//destroy
+	public void doCleanup() {
+		System.out.println("TrackCoach : inside cleanup method" );
+		
+	}
 
 }
